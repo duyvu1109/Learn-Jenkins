@@ -30,7 +30,7 @@ pipeline {
                 sh '''
                     echo "Test Jenkins with GCP"
                     gcloud version
-                    gcloud compute ssh --zone "asia-southeast1-a" "jenkins" --project "dulcet-analyst-442401-h5"
+                    gcloud run deploy nginx --image nginx
                 '''
             }
         }
