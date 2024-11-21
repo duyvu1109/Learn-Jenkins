@@ -28,6 +28,7 @@ pipeline {
         stage('test') {
             steps {
                 sh '''
+                    echo "Test Jenkins with GCP"
                     gcloud version
                 '''
             }
