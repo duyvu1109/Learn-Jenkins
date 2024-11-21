@@ -1,7 +1,11 @@
 @Library('SharedLibraries') _
 
 pipeline {
-    agent none
+    agent {
+        node {
+            label ""
+        }
+    }
     stages {
         stage ('Test') {
             steps {
