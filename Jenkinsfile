@@ -1,9 +1,13 @@
+@Library('SharedLibraries') _
+
 pipeline {
-    agent { docker { image 'golang:1.23.3-alpine3.20' } }
+    agent none
     stages {
-        stage('build') {
+        stage ('Test') {
             steps {
-                sh 'go version'
+                script {
+                    simple.call 'Kai Nguyen'
+                }
             }
         }
     }
