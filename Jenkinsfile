@@ -1,17 +1,35 @@
-@Library('SharedLibraries') _
+// @Library('SharedLibraries') _
+
+// pipeline {
+//     agent {
+//         node {
+//             label ""
+//         }
+//     }
+//     stages {
+//         stage ('Test') {
+//             steps {
+//                 script {
+//                     simple.call 'Kai Nguyen'
+//                 }
+//             }
+//         }
+//     }
+// }
 
 pipeline {
-    agent {
-        node {
-            label ""
-        }
-    }
+    agent any
+    // environment {
+    //     CLOUDSDK_CORE_PROJECT='x:y'
+    //     CLIENT_EMAIL='a@a.com'
+    //     GCLOUD_CREDS=credentials('gcloud-creds')
+    // }
     stages {
-        stage ('Test') {
+        stage('test') {
             steps {
-                script {
-                    simple.call 'Kai Nguyen'
-                }
+                sh '''
+                    gcloud version
+                '''
             }
         }
     }
