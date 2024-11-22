@@ -10,7 +10,7 @@ pipeline {
         stage ('Init') {
             steps {
                 script {
-                    gcp_set_region.call
+                    gcp_set_region.call ''
                 }
             }
         }
