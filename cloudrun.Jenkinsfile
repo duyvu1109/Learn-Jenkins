@@ -11,11 +11,10 @@ pipeline {
             steps {
                 script {
                     gcp_set_region.call ''
-                    
-                    LOCATION="Region"
-                    
-                    gcloud run deploy --image nginx --allow-unauthenticated --region=$LOCATION
                 }
+                sh 'LOCATION="Region"'   
+
+                sh 'gcloud run deploy --image nginx --allow-unauthenticated --region=$LOCATION'
             }
         }
     }
