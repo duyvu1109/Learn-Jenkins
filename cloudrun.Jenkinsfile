@@ -13,7 +13,7 @@ pipeline {
                     gcp_set_region.call ''
                 }
 
-                sh 'gcloud run deploy nginx --image nginx --allow-unauthenticated --region=Region'
+                sh 'gcloud run deploy nginx --image nginx --allow-unauthenticated --region=asia-southeast1'
             }
         }
     }
